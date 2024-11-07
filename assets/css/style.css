@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 
+/* Reset margin dan padding, menggunakan font Titillium Web dari Google Fonts */
 *,
 html {
   margin: 0;
@@ -9,43 +10,47 @@ html {
 }
 
 body {
-  background-color: #f2f2f2;
+  background-color: #f2f2f2; /* Warna latar belakang untuk body */
 }
 
+/* Mengatur layout utama */
 .layouts {
-  width: 100%;
-  max-width: 476px;
+  width: 100%; /* Mengatur lebar maksimal */
+  max-width: 476px; /* Batas lebar maksimal untuk tampilan responsif */
   height: 100vh; /* Set tinggi penuh viewport */
-  border: 1px solid #dcdcdc;
+  border: 1px solid #dcdcdc; /* Garis border */
   position: relative;
-  border-radius: 10px;
-  overflow: hidden;
+  border-radius: 10px; /* Membuat sudut membulat */
+  overflow: hidden; /* Menyembunyikan elemen di luar batas layout */
   margin: 0 auto; /* Pusatkan secara horizontal */
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan untuk efek elevasi */
 }
 
+/* Navbar bagian atas */
 .navbar {
-  background-color: #579fff;
+  background-color: #579fff; /* Warna latar belakang */
   padding: 20px;
   text-align: center;
 }
 
 .navbar h3 {
-  color: white;
+  color: white; /* Warna teks */
   font-weight: 900;
   font-size: 1.5rem;
   margin: 0;
 }
 
+/* Bagian yang menampung item di dalam layout */
 .items {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 100px);
-  overflow-y: scroll;
+  height: calc(100vh - 100px); /* Hitung tinggi berdasarkan navbar dan buttombar */
+  overflow-y: scroll; /* Aktifkan scroll vertikal */
   padding: 32px;
-  gap: 16px;
+  gap: 16px; /* Jarak antara item */
 }
 
+/* Tampilan untuk setiap item */
 .item {
   display: flex;
   flex-direction: column;
@@ -53,13 +58,15 @@ body {
   gap: 8px;
   padding: 8px;
   background-color: #f2f2f2;
-  box-shadow: 0px 0px 4px 1px #999;
+  box-shadow: 0px 0px 4px 1px #999; /* Efek bayangan */
 }
 
+/* Gambar dalam item */
 .item-image {
-  width: 50%;
+  width: 50%; /* Ukuran gambar dalam item */
 }
 
+/* Tombol submit untuk item */
 .item-submit {
   background-color: #579fff;
   padding: 4px 8px;
@@ -67,16 +74,18 @@ body {
   color: #fff;
   font-weight: bolder;
   font-size: 18px;
-  border: none;
+  border: none; /* Hilangkan border */
 }
 
+/* Tampilan untuk kumpulan LED */
 .leds {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(2, 1fr); /* Susun dua kolom */
+  gap: 16px; /* Jarak antara item LED */
   padding: 16px;
 }
 
+/* Tampilan untuk setiap LED */
 .led {
   display: flex;
   flex-direction: column;
@@ -87,15 +96,18 @@ body {
   box-shadow: 0px 0px 4px 1px #999;
 }
 
+/* Teks penunjuk lokasi LED */
 .led-location-text {
   font-weight: 700;
 }
 
+/* Gambar LED */
 .led-image {
   width: 50%;
-  object-fit: cover;
+  object-fit: cover; /* Pastikan gambar terisi secara proporsional */
 }
 
+/* Tombol untuk mengontrol LED */
 .led-submit {
   background-color: #579fff;
   padding: 4px 8px;
@@ -106,6 +118,7 @@ body {
   border: none;
 }
 
+/* Bagian judul halaman */
 .page-title {
   padding: 16px;
 }
@@ -116,6 +129,7 @@ body {
   font-size: xx-large;
 }
 
+/* Navbar bawah */
 .buttombar {
   position: absolute;
   bottom: 0;
@@ -132,28 +146,23 @@ body {
   margin: 0;
 }
 
+/* Tampilan tautan di navbar bawah */
 .buttombar ul li a {
   color: white;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.3s ease, transform 0.3s ease-in-out;
+  transition: color 0.3s ease, transform 0.3s ease-in-out; /* Transisi untuk warna dan efek skala */
 }
 
 .buttombar ul li a:hover {
   color: #ffdd57;
-  transform: scale(1.1); /* Perbesar ikon saat dihover */
+  transform: scale(1.1); /* Efek perbesar ikon saat dihover */
 }
 
-/* .buttombar ul li a:hover {
-  color: #ffdd57;
-  scale: 110%;
-  transition: all 0.3s ease-in-out;
-} */
-
-/* Responsive Design */
+/* Desain responsif untuk perangkat lebih kecil */
 @media (max-width: 500px) {
   .navbar h3 {
-    font-size: 1.25rem;
+    font-size: 1.25rem; /* Ukuran font lebih kecil di layar kecil */
   }
 
   .buttombar ul li a {
