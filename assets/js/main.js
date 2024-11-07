@@ -1,4 +1,4 @@
-const endpoint = "http://10.10.10.01"; // Alamat endpoint API yang akan diakses untuk mengatur dan mengambil status LED
+const endpoint = "http://192.168.0.106"; // Alamat endpoint API yang akan diakses untuk mengatur dan mengambil status LED
 
 // Fungsi untuk mendapatkan status LED di ruang tamu
 function getTamuLed() {
@@ -85,8 +85,6 @@ function setLabLed() {
   })
     .then((response) => response.text())
     .then(() => location.reload());
-  ledLab.style.background = "red"; // Ubah warna latar LED lab saat diubah
-  labLedImage.src = "./assets/img/led-on.png"; // Tampilkan gambar LED menyala
 }
 
 // Fungsi untuk mengubah status LED di kamar mandi (WC)
@@ -96,8 +94,6 @@ function setWcLed() {
   })
     .then((response) => response.text())
     .then(() => location.reload());
-  ledWc.style.background = "red";
-  wcLedImage.src = "./assets/img/led-on.png";
 }
 
 // Fungsi untuk mengubah status LED di dapur
@@ -107,8 +103,111 @@ function setDapurLed() {
   })
     .then((response) => response.text())
     .then(() => location.reload());
-  ledDapur.style.background = "red";
-  dapurLedImage.src = "./assets/img/led-on.png";
+}
+
+// Fungsi untuk mendapatkan status FAN di ruang tamu
+function getTamuFan() {
+  fetch(endpoint + "/fan/tamu", {
+    method: "GET",
+  })
+    .then((response) => response.text()) // Ambil teks respons dari server
+    .then((result) => {
+      if (result == "ON") {
+        // Jika FAN menyala
+        fanTamu.style.background = "blue"; // Ubah latar belakang elemen FAN tamu menjadi biru
+        tamuFanImage.src = "./assets/img/fan-on.png"; // Tampilkan gambar FAN menyala
+      } else {
+        fanTamu.style.background = "#579fff"; // Latar belakang FAN tamu menjadi warna default
+        tamuFanImage.src = "./assets/img/fan-off.png"; // Tampilkan gambar FAN mati
+      }
+    });
+}
+
+// Fungsi untuk mendapatkan status FAN di ruang lab
+function getLabFan() {
+  fetch(endpoint + "/fan/lab", {
+    method: "GET",
+  })
+    .then((response) => response.text())
+    .then((result) => {
+      if (result == "ON") {
+        fanTamu.style.background = "blue";
+        tamuFanImage.src = "./assets/img/fan-on.png";
+      } else {
+        fanTamu.style.background = "#579fff";
+        tamuFanImage.src = "./assets/img/fan-off.png";
+      }
+    });
+}
+
+// Fungsi untuk mendapatkan status FAN di kamar mandi (WC)
+function getWcFan() {
+  fetch(endpoint + "/fan/wc", {
+    method: "GET",
+  })
+    .then((response) => response.text())
+    .then((result) => {
+      if (result == "ON") {
+        fanTamu.style.background = "blue";
+        tamuFanImage.src = "./assets/img/fan-on.png";
+      } else {
+        fanTamu.style.background = "#579fff";
+        tamuFanImage.src = "./assets/img/fan-off.png";
+      }
+    });
+}
+
+// Fungsi untuk mendapatkan status LED di dapur
+function getDapurFan() {
+  fetch(endpoint + "/fan/dapur", {
+    method: "GET",
+  })
+    .then((response) => response.text())
+    .then((result) => {
+      if (result == "ON") {
+        fanTamu.style.background = "blue";
+        tamuFanImage.src = "./assets/img/fan-on.png";
+      } else {
+        fanTamu.style.background = "#579fff";
+        tamuFanImage.src = "./assets/img/fan-off.png";
+      }
+    });
+}
+
+// Fungsi untuk mengubah status FAN di ruang tamu
+function setTamuFan() {
+  fetch(endpoint + "/fan/tamu", {
+    method: "POST",
+  })
+    .then((response) => response.text()) // Ambil respons teks dari server
+    .then(() => location.reload()); // Refresh halaman untuk memperbarui status FAN
+}
+
+// Fungsi untuk mengubah status FAN di ruang lab
+function setLabFan() {
+  fetch(endpoint + "/fan/lab", {
+    method: "POST",
+  })
+    .then((response) => response.text())
+    .then(() => location.reload());
+}
+
+// Fungsi untuk mengubah status FAN di kamar mandi (WC)
+function setWcFan() {
+  fetch(endpoint + "/fan/wc", {
+    method: "POST",
+  })
+    .then((response) => response.text())
+    .then(() => location.reload());
+}
+
+// Fungsi untuk mengubah status FAN di dapur
+function setDapurFan() {
+  fetch(endpoint + "/fan/dapur", {
+    method: "POST",
+  })
+    .then((response) => response.text())
+    .then(() => location.reload());
 }
 
 // Memanggil fungsi untuk mendapatkan status awal setiap LED saat halaman pertama kali dimuat
@@ -116,3 +215,9 @@ getTamuLed();
 getLabLed();
 getWcLed();
 getDapurLed();
+
+// Memanggil fungsi untuk mendapatkan status awal setiap FAN saat halaman pertama kali dimuat
+getTamuFan();
+getLabFan();
+getWcFan();
+getDapurFan();

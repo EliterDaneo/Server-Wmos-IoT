@@ -44,7 +44,9 @@ body {
 .items {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 100px); /* Hitung tinggi berdasarkan navbar dan buttombar */
+  height: calc(
+    100vh - 100px
+  ); /* Hitung tinggi berdasarkan navbar dan buttombar */
   overflow-y: scroll; /* Aktifkan scroll vertikal */
   padding: 32px;
   gap: 16px; /* Jarak antara item */
@@ -109,6 +111,47 @@ body {
 
 /* Tombol untuk mengontrol LED */
 .led-submit {
+  background-color: #579fff;
+  padding: 4px 8px;
+  width: 100%;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 18px;
+  border: none;
+}
+
+/* Tampilan untuk kumpulan FAN */
+.fans {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Susun dua kolom */
+  gap: 16px; /* Jarak antara item fan */
+  padding: 16px;
+}
+
+/* Tampilan untuk setiap FAN */
+.fan {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 4px 1px #999;
+}
+
+/* Teks penunjuk lokasi FAN */
+.fan-location-text {
+  font-weight: 700;
+}
+
+/* Gambar fan */
+.fan-image {
+  width: 50%;
+  object-fit: cover; /* Pastikan gambar terisi secara proporsional */
+}
+
+/* Tombol untuk mengontrol FAN */
+.fan-submit {
   background-color: #579fff;
   padding: 4px 8px;
   width: 100%;
