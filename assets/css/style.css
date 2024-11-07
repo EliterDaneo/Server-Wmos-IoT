@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+.layouts {
+  width: 100%;
+  max-width: 476px;
+  height: 100vh; /* Set tinggi penuh viewport */
+  border: 1px solid #dcdcdc;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto; /* Pusatkan secara horizontal */
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  background-color: #579fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.navbar h3 {
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  overflow-y: scroll;
+  padding: 32px;
+  gap: 16px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 4px 1px #999;
+}
+
+.item-image {
+  width: 50%;
+}
+
+.item-submit {
+  background-color: #579fff;
+  padding: 4px 8px;
+  width: 100%;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 18px;
+  border: none;
+}
+
+.leds {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  padding: 16px;
+}
+
+.led {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 4px 1px #999;
+}
+
+.led-location-text {
+  font-weight: 700;
+}
+
+.led-image {
+  width: 50%;
+  object-fit: cover;
+}
+
+.led-submit {
+  background-color: #579fff;
+  padding: 4px 8px;
+  width: 100%;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 18px;
+  border: none;
+}
+
+.page-title {
+  padding: 16px;
+}
+
+.page-title h3 {
+  text-align: center;
+  font-weight: 800;
+  font-size: xx-large;
+}
+
+.buttombar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: #579fff;
+  width: 100%;
+}
+
+.buttombar ul {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+}
+
+.buttombar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.buttombar ul li a:hover {
+  color: #ffdd57;
+  transform: scale(1.1); /* Perbesar ikon saat dihover */
+}
+
+/* .buttombar ul li a:hover {
+  color: #ffdd57;
+  scale: 110%;
+  transition: all 0.3s ease-in-out;
+} */
+
+/* Responsive Design */
+@media (max-width: 500px) {
+  .navbar h3 {
+    font-size: 1.25rem;
+  }
+
+  .buttombar ul li a {
+    font-size: 0.875rem;
+  }
+}
