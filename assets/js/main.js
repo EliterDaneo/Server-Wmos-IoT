@@ -1,4 +1,4 @@
-const endpoint = "http://192.168.0.106"; // Alamat endpoint API yang akan diakses untuk mengatur dan mengambil status LED
+const endpoint = "http://192.168.137.81"; // Alamat endpoint API yang akan diakses untuk mengatur dan mengambil status LED
 
 // Fungsi untuk mendapatkan status LED di ruang tamu
 function getTamuLed() {
